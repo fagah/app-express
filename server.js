@@ -1,15 +1,17 @@
 const express = require('express')
 const app = express()
 const port = 1000
+// Utiles pour la communication avec la BD
 const { Sequelize } = require('sequelize');
 const { QueryTypes } = require('sequelize');
-// const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname')
 const sequelize = new Sequelize('BIBLIO', 'root', 'sejen@2018!', {
         host: 'localhost',
         dialect: 'mysql'
 });
 
-
+/**
+ * Premier exmple de route
+ */
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
